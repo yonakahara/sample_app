@@ -1,5 +1,8 @@
 # README
 
+* 本番環境（heroku）
+* https://shielded-citadel-47940.herokuapp.com/
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
