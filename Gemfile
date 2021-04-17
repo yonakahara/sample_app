@@ -34,6 +34,7 @@ group :test do
   gem 'guard-minitest',           '2.4.6'
 end
 
+# 本番用のgem
 group :production do
   gem 'pg', '1.1.4'
 end
