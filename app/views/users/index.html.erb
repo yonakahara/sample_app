@@ -1,0 +1,11 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <!-- @usersを突っ込むと自動でeach doだと判断してくれて_user.html.erbパーシャルを呼び出してくれるらしい -->
+  <%= render @users %>
+</ul>
+
+<%= will_paginate %>
