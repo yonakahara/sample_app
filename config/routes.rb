@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   get 'sessions/new'
   get 'users/new'
   root 'static_pages#home'
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   resources :users
   # 名前付きルート: edit_account_activation_url(token)
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
