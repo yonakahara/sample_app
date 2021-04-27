@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # 名前付きルート: edit_account_activation_url(token)
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :microposts, only: [:create, :destroy]
 end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

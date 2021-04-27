@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :microposts, dependent: :destroy
     # 仮想の属性を作成（dbに保存されない）
     attr_accessor :remember_token, :activation_token, :reset_token
     before_save :downcase_email
@@ -64,6 +65,10 @@ class User < ApplicationRecord
     def password_reset_expired?
         # <: 早い
         reset_sent_at < 2.hours.ago
+    end
+
+    def feed
+        Micropost.where("user_id=?", id)
     end
 
     # private内のメソッドは外部に公開されず、userClassの中でしか使えない。
